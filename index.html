@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d32">
+  <title>Amigo Oculto 2026 🎄</title>
+  <style>
+    :root {
+      --green:#173d32; --green2:#245846; --cream:#fffaf0; --red:#b94c45;
+      --gold:#d8ad5a; --ink:#24342e; --muted:#718078; --line:#e9e5d9;
+      --shadow:0 14px 38px rgba(28,55,44,.09);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input{font:inherit}
+    a{color:inherit}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#14382f,#245846 65%,#32694e);color:#fff;padding:58px 20px 74px}
+    .hero:before,.hero:after{content:"✦";position:absolute;color:rgba(255,255,255,.12);font-size:170px;line-height:1}
+    .hero:before{top:-40px;right:5%}.hero:after{content:"❄";font-size:120px;bottom:-38px;left:5%}
+    .hero-inner{max-width:1050px;margin:auto;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 13px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#f4dfb0}
+    h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,76px);line-height:.98;letter-spacing:-.045em;margin:23px 0 14px}
+    .hero p{max-width:620px;color:#e2eee6;font-size:17px;line-height:1.65;margin:0}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+    .meta-pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:11px 14px;font-size:14px}
+    .meta-pill strong{color:#ffe1a1}
+    main{max-width:1050px;margin:-28px auto 0;padding:0 18px 60px;position:relative;z-index:2}
+    .notice{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .notice h2{font-size:18px;margin:0 0 7px;color:var(--green)}
+    .notice p{margin:0;color:#59675f;line-height:1.55;font-size:14px}
+    .amount{font-family:Georgia,serif;font-size:38px;color:var(--red);white-space:nowrap}
+    .pix{margin-top:14px;background:#f2f7f1;border:1px dashed #9bb7a2;border-radius:14px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px}
+    .pix strong{color:var(--green)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:38px 2px 16px}
+    .section-head h2{font-family:Georgia,serif;font-size:31px;color:var(--green);margin:0}
+    .section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
+    .search-wrap{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .search{flex:1;min-width:220px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;outline:none}
+    .search:focus{border-color:#6d987b;box-shadow:0 0 0 3px #6d987b20}
+    .count{align-self:center;color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .person{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:0 5px 20px rgba(28,55,44,.035);transition:transform .2s,box-shadow .2s}
+    .person:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .person-top{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+    .avatar{width:43px;height:43px;border-radius:14px;background:#edf4eb;color:var(--green);display:grid;place-items:center;font-size:19px;flex:none}
+    .person h3{margin:0;font-size:17px;color:var(--green)}
+    .person small{color:var(--muted);font-size:12px}
+    .ideas{margin:0;padding-left:19px;color:#4c5a52;font-size:14px;line-height:1.65}
+    .ideas li{padding-left:2px;margin:3px 0}
+    .ideas a{color:#28704f;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+    .tag{display:inline-block;margin-top:12px;background:#fff4dc;color:#886321;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:700}
+    .footer{margin-top:28px;text-align:center;color:#7a867e;font-size:13px;line-height:1.7}
+    .empty{grid-column:1/-1;text-align:center;padding:35px;background:#fff;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
+    .btn{border:0;border-radius:10px;background:var(--green);color:#fff;padding:10px 14px;font-weight:650;cursor:pointer;transition:background .2s}
+    .btn:hover{background:#2b604a}
+    .btn-light{background:#fff;color:var(--green);border:1px solid #d8e3d8}
+    .btn-light:hover{background:#f1f7f0}
+    .rule{margin-top:18px;border-radius:16px;background:#fff6e6;border:1px solid #f0dfb9;padding:16px 18px;color:#725526;font-size:14px;line-height:1.55}
+    .rule strong{color:#624719}
+    @media(max-width:650px){
+      .hero{padding:45px 19px 65px}.hero p{font-size:15px}
+      .notice{grid-template-columns:1fr}.amount{font-size:34px}
+      .section-head{display:block}.section-head h2{font-size:28px}
+      .grid{grid-template-columns:1fr}.pix{align-items:flex-start;flex-direction:column}
+      main{padding-left:13px;padding-right:13px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">🎄 Edição 2026 · confraternização</span>
+      <h1>Amigo Oculto<br>da turma</h1>
+      <p>Presentes, churrasco e boas histórias para fechar o ano. Aqui você encontra as sugestões de cada pessoa para acertar no mimo — e já fica por dentro dos combinados!</p>
+      <div class="hero-meta">
+        <div class="meta-pill">📅 <strong>06 de dezembro</strong></div>
+        <div class="meta-pill">📍 Casa da Tessália</div>
+        <div class="meta-pill">🔥 Churrasco + amigo oculto</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="notice" aria-labelledby="combinados">
+      <div>
+        <h2 id="combinados">🥩 Nosso encontro</h2>
+        <p>Vai rolar um churrasco na casa da Tessália! Para organizar tudo, cada pessoa contribui com <strong>R$ 40,00</strong>. O valor será usado na compra de carnes, drinks, comidas e sobremesa.</p>
+        <div class="pix">
+          <span>💸 Faça o Pix para <strong>Tessália</strong><br><small>Peça a chave Pix diretamente a ela.</small></span>
+          <button class="btn btn-light" id="pixBtn" type="button">Copiar lembrete</button>
+        </div>
+      </div>
+      <div class="amount">R$ 40,00</div>
+    </section>
+
+    <div class="rule">
+      🎁 <strong>Regra do presente:</strong> valor mínimo de <strong>R$ 130,00</strong>. Se o presente custar R$ 120,00, complete com três barras de chocolate para chegar aos R$ 130,00 e ninguém sair no prejuízo. <strong>COMUNISMO JÁ! ✊</strong>
+    </div>
+
+    <section aria-labelledby="sugestoes">
+      <div class="section-head">
+        <div>
+          <h2 id="sugestoes">Lista de sugestões</h2>
+          <p>Pesquise pelo nome e confira as ideias de cada pessoa.</p>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <input class="search" id="search" type="search" placeholder="🔎  Buscar alguém ou um presente..." aria-label="Buscar pessoa ou presente">
+        <span class="count" id="count" aria-live="polite"></span>
+      </div>
+      <div class="grid" id="people">
+        <article class="person" data-search="anna legbox roupa conjunto pijama babydoll joelheira skyhill vela creme body splash esfoliante avatim loccitane granado semi joias">
+          <div class="person-top"><div class="avatar">🌷</div><div><h3>Anna</h3><small>Ideias para presentear</small></div></div>
+          <ul class="ideas">
+            <li>Conjunto ou roupa da Legbox</li><li>Pijama babydoll</li><li>Joelheira Skyhill</li>
+            <li>Vela, creme, body splash ou esfoliante da Avatim, L’Occitane ou Granado</li><li>Semijoias</li>
+          </ul>
+        </article>
+        <article class="person" data-search="gabriel blusas G perfume não doce jaqueta corta vento looks academia tênis 43">
+          <div class="person-top"><div class="avatar">🧢</div><div><h3>Gabriel</h3><small>Ideias para presentear</small></div></div>
+          <ul class="ideas"><li>Blusas tamanho G</li><li>Perfume que não seja muito doce</li><li>Jaqueta ou corta-vento</li><li>Looks de academia</li><li>Tênis tamanho 43</li></ul>
+        </article>
+        <article class="person" data-search="gustavo whey growth suplemento">
+          <div class="person-top"><div class="avatar">💪</div><div><h3>Gustavo</h3><small>Ideia principal</small></div></div>
+          <ul class="ideas"><li>Whey da Growth 🔔</li></ul>
+          <span class="tag">Dica direta ao ponto</span>
+        </article>
+        <article class="person" data-search="julia japão lembrancinhas irmã calça blusa moletom adidas nike fila meias bolsas compressão body splash loccitane romã roupa treino legging shorts top">
+          <div class="person-top"><div class="avatar">🌸</div><div><h3>Julia</h3><small>Ideias para presentear</small></div></div>
+          <ul class="ideas">
+            <li>Lembrancinhas para dar à irmã (não trouxe do Japão)</li><li>Calça ou blusa de moletom</li>
+            <li>Meias, bolsas ou blusinhas de compressão de marcas como Adidas, Nike e Fila</li>
+            <li>Body splash da L’Occitane — menos o de Romã</li><li>Roupas de treino de marca: legging, shorts, top ou meias</li>
+          </ul>
+        </article>
+        <article class="person" data-search="lucas perfume amadeirado cítrico especiarias boticário natura doce frutado">
+          <div class="person-top"><div class="avatar">🌿</div><div><h3>Lucas</h3><small>Preferências de fragrância</small></div></div>
+          <ul class="ideas">
+            <li>Perfumes amadeirados, cítricos ou com especiarias</li><li>Boticário ou Natura são boas escolhas</li>
+            <li><strong>Evitar:</strong> fragrâncias muito doces ou frutadas</li>
+          </ul>
+        </article>
+        <article class="person" data-search="maria sugestões presente link site">
+          <div class="person-top"><div class="avatar">🎀</div><div><h3>Maria</h3><small>Lista completa no link</small></div></div>
+          <ul class="ideas"><li><a href="https://sugestoes-presente-maria-v5.tiiny.site" target="_blank" rel="noopener noreferrer">Abrir sugestões de presente da Maria ↗</a></li></ul>
+          <span class="tag">Link externo</span>
+        </article>
+        <article class="person" data-search="matheus power bank ugreen baseus skincare sallve hidratante reparador spray calmante creme retexturizador camiseta GG oversized piet pace carnan mad class pokemon pulseira inteligente">
+          <div class="person-top"><div class="avatar">⚡</div><div><h3>Matheus</h3><small>Ideias para presentear</small></div></div>
+          <ul class="ideas">
+            <li>Power bank Ugreen ou Baseus</li><li>Skincare Sallve: Hidratante Reparador, Spray Reparador Calmante ou Creme Retexturizador Noturno</li>
+            <li>Camiseta oversized GG — Piet, Pace, Carnan, Mad ou Class</li><li>Cartinhas Pokémon para complementar o valor 😄</li><li>Pulseira inteligente</li>
+          </ul>
+        </article>
+        <article class="person" data-search="nathan sugestões presente site amigo oculto">
+          <div class="person-top"><div class="avatar">🧭</div><div><h3>Nathan</h3><small>Lista completa no link</small></div></div>
+          <ul class="ideas"><li><a href="https://nathanfrt.github.io/amigo-oculto-2026/" target="_blank" rel="noopener noreferrer">Abrir sugestões de presente do Nathan ↗</a></li></ul>
+          <span class="tag">Link externo</span>
+        </article>
+        <article class="person" data-search="pedro vinil vinils discos música">
+          <div class="person-top"><div class="avatar">🎵</div><div><h3>Pedro</h3><small>Ideia principal</small></div></div>
+          <ul class="ideas"><li>Vinils / discos de vinil</li></ul>
+        </article>
+        <article class="person" data-search="tessalia tessália sugestões presente drive">
+          <div class="person-top"><div class="avatar">🎅🏽</div><div><h3>Tessália</h3><small>Lista completa no link</small></div></div>
+          <ul class="ideas"><li><a href="https://drive.google.com/file/d/10XIaaZNAk0oeGg_KVd_zT3TM0SwrY5kB/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Clique aqui para ver as sugestões da Tessália ↗</a></li></ul>
+          <span class="tag">Link do Google Drive</span>
+        </article>
+      </div>
+    </section>
+    <footer class="footer">
+      Feito com carinho, espírito natalino e uma pitada de competição por presentes. 🎄<br>
+      <strong>06.12.2026 · Casa da Tessália</strong>
+    </footer>
+  </main>
+
+  <script>
+    const search = document.getElementById('search');
+    const cards = [...document.querySelectorAll('.person')];
+    const count = document.getElementById('count');
+    function filterPeople() {
+      const term = search.value.trim().toLocaleLowerCase('pt-BR');
+      let visible = 0;
+      cards.forEach(card => {
+        const match = card.dataset.search.toLocaleLowerCase('pt-BR').includes(term);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+      count.textContent = `${visible} de ${cards.length} pessoas`;
+      let empty = document.getElementById('empty');
+      if (!visible && !empty) {
+        empty = document.createElement('div');
+        empty.id = 'empty'; empty.className = 'empty';
+        empty.textContent = 'Não encontramos ninguém com esse nome ou presente. Tente outra busca. 🎁';
+        document.getElementById('people').appendChild(empty);
+      } else if (visible && empty) empty.remove();
+    }
+    search.addEventListener('input', filterPeople);
+    filterPeople();
+    document.getElementById('pixBtn').addEventListener('click', async () => {
+      const text = 'Contribuição do churrasco do Amigo Oculto: R$ 40,00. Fazer Pix para Tessália (solicitar a chave Pix diretamente a ela).';
+      const btn = document.getElementById('pixBtn');
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = 'Lembrete copiado ✓';
+      } catch {
+        btn.textContent = 'Pix para Tessália: R$ 40';
+      }
+      setTimeout(() => btn.textContent = 'Copiar lembrete', 2400);
+    });
+  </script>
+</body>
+</html>
