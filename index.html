@@ -20,6 +20,22 @@
     .hero:before,.hero:after{content:"✦";position:absolute;color:rgba(255,255,255,.12);font-size:170px;line-height:1}
     .hero:before{top:-40px;right:5%}.hero:after{content:"❄";font-size:120px;bottom:-38px;left:5%}
     .hero-inner{max-width:1050px;margin:auto;position:relative;z-index:1}
+    .group-photo-wrap{max-width:760px;margin:30px auto 0;position:relative;animation:floatIn .9s ease both}
+    .group-photo{display:block;width:100%;max-height:570px;object-fit:cover;object-position:center 43%;border:5px solid rgba(255,255,255,.82);border-radius:24px;box-shadow:0 22px 55px rgba(0,0,0,.28)}
+    .photo-caption{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(20,56,47,.88);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 15px;font-size:13px}
+    .sparkle{position:absolute;z-index:2;color:#ffe1a1;font-size:25px;animation:twinkle 2s ease-in-out infinite}
+    .sparkle.one{top:12%;left:-18px}.sparkle.two{right:-18px;top:35%;animation-delay:.7s}
+    @keyframes twinkle{0%,100%{transform:scale(.75) rotate(0);opacity:.55}50%{transform:scale(1.25) rotate(18deg);opacity:1}}
+    @keyframes floatIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .notice{animation:floatIn .7s ease both}
+    .person{animation:floatIn .55s ease both}
+    .amount{animation:bob 3s ease-in-out infinite}
+    .shopping-list{margin:13px 0 0;padding:13px 15px;background:#fff8e9;border:1px solid #f0dfb9;border-radius:13px}
+    .shopping-list strong{display:block;color:#725526;margin-bottom:7px;font-size:13px}
+    .shopping-list ul{margin:0;padding-left:19px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px;color:#725526;font-size:13px}
+    .toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#173d32;color:white;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);z-index:10;transition:.25s;pointer-events:none}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
     .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 13px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#f4dfb0}
     h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,76px);line-height:.98;letter-spacing:-.045em;margin:23px 0 14px}
     .hero p{max-width:620px;color:#e2eee6;font-size:17px;line-height:1.65;margin:0}
@@ -41,6 +57,7 @@
     .search:focus{border-color:#6d987b;box-shadow:0 0 0 3px #6d987b20}
     .count{align-self:center;color:var(--muted);font-size:13px}
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .person[hidden]{display:none}
     .person{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:0 5px 20px rgba(28,55,44,.035);transition:transform .2s,box-shadow .2s}
     .person:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
     .person-top{display:flex;align-items:center;gap:12px;margin-bottom:13px}
@@ -64,6 +81,8 @@
       .notice{grid-template-columns:1fr}.amount{font-size:34px}
       .section-head{display:block}.section-head h2{font-size:28px}
       .grid{grid-template-columns:1fr}.pix{align-items:flex-start;flex-direction:column}
+      .group-photo{max-height:470px}.shopping-list ul{grid-template-columns:1fr 1fr}
+      .photo-caption{font-size:11px}
       main{padding-left:13px;padding-right:13px}
     }
   </style>
@@ -79,6 +98,11 @@
         <div class="meta-pill">📍 Casa da Tessália</div>
         <div class="meta-pill">🔥 Churrasco + amigo oculto</div>
       </div>
+      <div class="group-photo-wrap">
+        <span class="sparkle one">✦</span><span class="sparkle two">✧</span>
+        <img class="group-photo" src="assets/grupo.png" alt="Ilustração do grupo reunido para a confraternização">
+        <span class="photo-caption">Nossa turma reunida! 🥳</span>
+      </div>
     </div>
   </header>
 
@@ -86,13 +110,20 @@
     <section class="notice" aria-labelledby="combinados">
       <div>
         <h2 id="combinados">🥩 Nosso encontro</h2>
-        <p>Vai rolar um churrasco na casa da Tessália! Para organizar tudo, cada pessoa contribui com <strong>R$ 40,00</strong>. O valor será usado na compra de carnes, drinks, comidas e sobremesa.</p>
+        <p>Vai rolar um churrasco na casa da Tessália! Cada pessoa deve contribuir com <strong>R$ 80,00</strong> para ajudar a comprar os itens da nossa confraternização.</p>
+        <div class="shopping-list">
+          <strong>🛒 Compras do churrasco — não esquecer:</strong>
+          <ul>
+            <li>Kit churrasco</li><li>Skool Beats</li><li>Xeque Mate</li>
+            <li>Licor 53</li><li>Água com gás</li><li>Refrigerante</li><li>Sobremesas</li>
+          </ul>
+        </div>
         <div class="pix">
-          <span>💸 Faça o Pix para <strong>Tessália</strong><br><small>Peça a chave Pix diretamente a ela.</small></span>
+          <span>💸 Faça o Pix de <strong>R$ 80,00 para Tessália</strong><br><small>Peça a chave Pix diretamente a ela.</small></span>
           <button class="btn btn-light" id="pixBtn" type="button">Copiar lembrete</button>
         </div>
       </div>
-      <div class="amount">R$ 40,00</div>
+      <div class="amount">R$ 80,00</div>
     </section>
 
     <div class="rule">
@@ -124,8 +155,8 @@
         </article>
         <article class="person" data-search="gustavo whey growth suplemento">
           <div class="person-top"><div class="avatar">💪</div><div><h3>Gustavo</h3><small>Ideia principal</small></div></div>
-          <ul class="ideas"><li>Whey da Growth 🔔</li></ul>
-          <span class="tag">Dica direta ao ponto</span>
+          <ul class="ideas"><li>Blusa de moletom</li><li>Tênis</li><li>Pulseira</li><li>Correntinha</li></ul>
+          <span class="tag">Quatro ideias para escolher</span>
         </article>
         <article class="person" data-search="julia japão lembrancinhas irmã calça blusa moletom adidas nike fila meias bolsas compressão body splash loccitane romã roupa treino legging shorts top">
           <div class="person-top"><div class="avatar">🌸</div><div><h3>Julia</h3><small>Ideias para presentear</small></div></div>
@@ -176,6 +207,7 @@
     </footer>
   </main>
 
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>
     const search = document.getElementById('search');
     const cards = [...document.querySelectorAll('.person')];
@@ -199,14 +231,20 @@
     }
     search.addEventListener('input', filterPeople);
     filterPeople();
+    window.addEventListener('load', () => {
+      const toast = document.getElementById('toast');
+      toast.textContent = '🎄 Já pode escolher o presente e preparar a animação!';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+    });
     document.getElementById('pixBtn').addEventListener('click', async () => {
-      const text = 'Contribuição do churrasco do Amigo Oculto: R$ 40,00. Fazer Pix para Tessália (solicitar a chave Pix diretamente a ela).';
+      const text = 'Contribuição do churrasco do Amigo Oculto: R$ 80,00. Fazer Pix para Tessália (solicitar a chave Pix diretamente a ela). Compras: kit churrasco, Skool Beats, Xeque Mate, Licor 53, água com gás, refrigerante e sobremesas.';
       const btn = document.getElementById('pixBtn');
       try {
         await navigator.clipboard.writeText(text);
         btn.textContent = 'Lembrete copiado ✓';
       } catch {
-        btn.textContent = 'Pix para Tessália: R$ 40';
+        btn.textContent = 'Pix de R$ 80 para Tessália';
       }
       setTimeout(() => btn.textContent = 'Copiar lembrete', 2400);
     });
